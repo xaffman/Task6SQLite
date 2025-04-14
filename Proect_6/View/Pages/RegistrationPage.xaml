@@ -1,0 +1,149 @@
+﻿<Page x:Class="Proect_6.View.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Proect_6.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" 
+      d:DesignWidth="1024"
+      FontFamily="Centry Gotic">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="380"
+            Height="485"
+            CornerRadius="55"
+            BorderBrush="#120854f5"
+            BorderThickness="2"
+            Background="#ffffff"
+            Margin="0 0 0 0">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <StackPanel Margin="0 30 0 0"
+                                HorizontalAlignment="Center">
+                        <TextBlock FontSize="26"
+                                   FontWeight="SemiBold">
+                        <Run Text="Практическая работа " 
+                                 Foreground="Black"/>
+                        <Run Text="№6" 
+                                 Foreground="CornflowerBlue"/>
+                        </TextBlock>
+
+
+                        <TextBlock Text="Работ c SQLite"
+                               TextAlignment="Center"
+                               FontWeight="Regular"
+                               FontSize="16"
+                               Foreground="Black"/>
+
+                        <materialDesign:PackIcon Kind="Burger"
+                                             Margin="0 20 0 0"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"
+                                             Foreground="CornflowerBlue"
+                                             Height="100"
+                                             Width="100"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                            Margin="0 20 0 0">
+                        <materialDesign:PackIcon Kind="Email"
+                                             Width="25"
+                                             Height="25"
+                                             Margin="0 3 10 0"/>
+                        <TextBox  Width="305"
+                               x:Name="TbLogin"
+                               FontWeight="Regular"
+                               Foreground="CornflowerBlue"
+                               FontSize="15"
+                               materialDesign:HintAssist.Hint="Введите адрес электронной почты..."
+                               materialDesign:TextFieldAssist.HasClearButton="True"
+                               materialDesign:TextFieldAssist.UnderlineBrush="CornflowerBlue"/>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                            Margin="0 20 0 0">
+                        <materialDesign:PackIcon Kind="Password"
+                                             Width="25"
+                                             Height="25"
+                                             Margin="0 3 10 0"/>
+                        <PasswordBox Width="305"
+                               x:Name="PbPassword"
+                               FontWeight="Regular"
+                               Foreground="CornflowerBlue"
+                               FontSize="15"
+                               materialDesign:HintAssist.Hint="Введите пароль..."
+                               materialDesign:TextFieldAssist.HasClearButton="True"
+                               materialDesign:TextFieldAssist.UnderlineBrush="CornflowerBlue"/>
+
+                    </StackPanel>
+                    <StackPanel Margin="0 20 0 0">
+                        <CheckBox Content="Отобразить пароль"
+                                  BorderBrush="CornflowerBlue"
+                                  Foreground="#fff"
+                                  Background="CornflowerBlue"
+                                  Cursor="Hand"
+                                  FontSize="15" />
+                    </StackPanel>
+
+                    <StackPanel Margin="0 20 0 0"
+                            Orientation="Horizontal">
+                        <Button Width="200"
+                            Margin="0 0 20 0"
+                            x:Name="BtnCreate"
+                            Click="BtnCreate_Click"
+                            Height="40"
+                            BorderBrush="CornflowerBlue"
+                            Background="CornflowerBlue"
+                            Foreground="White"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            materialDesign:ButtonProgressAssist.Value="-1"
+                            materialDesign:ButtonProgressAssist.IndicatorForeground="#ffffff"
+                            materialDesign:ButtonProgressAssist.IndicatorBackground="Transparent"
+                            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                            IsEnabled="{Binding DataContaxt.ControlsEnabled, 
+                                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Create"
+                                                     Margin="0 02 3 0"/>
+                                <TextBlock Text="Создать аккаунт"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Width="120"
+                            x:Name="BtnBack"
+                            Click="BtnBack_Click"
+                            Height="40"
+                            BorderBrush="CornflowerBlue"
+                            Background="CornflowerBlue"
+                            Foreground="#fff"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            materialDesign:ButtonProgressAssist.Value="-1"
+                            materialDesign:ButtonProgressAssist.IndicatorForeground="#fff"
+                            materialDesign:ButtonProgressAssist.IndicatorBackground="Transparent"
+                            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                            IsEnabled="{Binding DataContaxt.ControlsEnabled, 
+                                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Login"
+                                                     Margin="0 2 3 0"/>
+                                <TextBlock Text="Войти"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+
+        </Border>
+    </Grid>
+</Page>
